@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'lips';
 @import 'global';
 
 .header {
@@ -153,13 +154,10 @@ footer {
     }
   }
   &__form-btn {
+    @extend %btn;
     border: none;
-    background-color: $accent;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 12px 26px;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
-    cursor: pointer;
+    
+    cursor: pointer;  
   }
 }
 
@@ -175,6 +173,92 @@ footer {
   }
   &__accept-img {
     margin-left: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.top-slider {
+  background-color: $bg;
+  background-image: url(../images/top-slider-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 65px;
+  &__container {
+    max-width: 1560px;
+  }
+  &__content {
+    padding-left: 170px;
+    padding-top: 125px;
+  }
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  &__title{
+    max-width: 670px;
+    font-size: 58px;
+    line-height: 1.1;
+    color: $title;
+    @extend %roboto-700;
+    margin-bottom: 35px;
+  }
+  &__text {
+    margin-bottom: 55px;
+    max-width: 470px;
+  }
+  &__link {
+    @extend %btn;
+    padding: 14px 36px;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    li{
+      margin: 0 5px;
+      line-height: 0;
+      margin-top: -70px;
+      button {
+        padding: 0;
+        font-size: 0;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.slick-active {
+        button {
+          border-color: $accent;
+          &::before {
+            background-color: $accent;
+          }
+        }
+      }
+    }
   }
 }
 
