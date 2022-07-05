@@ -10,13 +10,14 @@ body {
   @extend %quicksand-500;
   display: flex;
   flex-direction: column;
+  outline: transparent;
 }
 
 .main {
   flex-grow: 1;
 }
 
-.container  {
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
@@ -51,6 +52,7 @@ a {
   justify-content: center;
   padding-left: 25px;
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -60,14 +62,17 @@ a {
     left: 0;
     top: 4px;
   }
+
   &__list {
     display: flex;
 
   }
+
   &__item {
     color: #727272;
     padding-right: 40px;
     position: relative;
+
     &::after {
       content: '';
       position: absolute;
@@ -77,14 +82,17 @@ a {
       right: 15px;
       top: 9px;
     }
+
     &:last-child {
       color: $accent;
       padding-right: 0;
+
       &::after {
         display: none;
       }
     }
   }
+
   &__link {
     color: inherit;
   }
@@ -93,3 +101,64 @@ a {
 .header--404-page {
   background-color: $bg;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+
+  .pagination__list {
+    display: flex;
+    padding: 0 35px;
+  }
+
+  &__item {
+    padding: 0 15px;
+  }
+
+  &__arrows {
+    text-transform: uppercase;
+    position: relative;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 10px;
+    }
+  }
+
+  &__prev {
+    padding-left: 15px;
+
+    &::before {
+      background-image: url('../images/icons/angle-left.svg');
+      top: 7px;
+      left: 3px;
+    }
+  }
+
+  &__next {
+    padding-right: 15px;
+
+    &::before {
+      background-image: url('../images/icons/angle-rights.svg');
+      top: 7px;
+      right: 3px;
+    }
+  }
+  &__link {
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+
+
+
+
